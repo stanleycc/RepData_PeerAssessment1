@@ -1,16 +1,12 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 ## Loading and preprocessing the data
 
 ---
 
 Unzip the activity.zip and read it into a data table by `read.csv()`.
-```{r}
+
+```r
 filename <- "activity.zip"
 if ( file.exists(filename) ) {
     unzip(filename)
@@ -24,7 +20,8 @@ dt$date <- as.Date(dt$date)
 
 ---
 
-```{r, warning=FALSE, message=FALSE}
+
+```r
 library(dplyr)
 library(ggplot2)
 res <- dt %>% group_by(date) %>% summarise(steps = sum(steps))
@@ -34,12 +31,15 @@ g + geom_bar(stat = "identity") +
     ylab("Total Steps")
 ```
 
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)\
+
 
 ## What is the average daily activity pattern?
 
 ---
 
-```{r, warning=FALSE, message=FALSE}
+
+```r
 res <- dt %>% group_by(interval) %>% summarise(steps = mean(steps,na.rm=TRUE))
 g <- ggplot(res,aes(interval,steps))
 g + geom_line() + 
@@ -47,9 +47,9 @@ g + geom_line() +
     ylab("Total Steps")
 ```
 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)\
+
 ## Imputing missing values
-
-
 
 
 
