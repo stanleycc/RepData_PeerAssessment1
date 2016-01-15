@@ -52,7 +52,7 @@ With library ``dplyr``, calculate the total steps on each day.
 res <- dt %>% group_by(date) %>% summarise(steps = sum(steps))
 ```
 
-Make a barplot based on ggplot2.
+Make a histogram based on ggplot2.
 
 
 ```r
