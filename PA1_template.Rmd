@@ -56,10 +56,8 @@ res <- dt %>% group_by(date) %>% summarise(steps = sum(steps))
 Make a barplot based on ggplot2.
 
 ```{r, warning=FALSE}
-g <- ggplot(res,aes(date,steps))
-g + geom_bar(stat = "identity") + 
-    xlab("Date") + 
-    ylab("Total Steps")
+g <- ggplot(res,aes(steps))
+g + geom_histogram(binwidth = 800)
 ```
 
 The mean of the total number of steps taken per day.
@@ -133,10 +131,9 @@ Make a histogram from new data table and cacluate the mean and median total numb
 
 ```{r}
 res <- dt2 %>% group_by(date) %>% summarise(steps = sum(steps))
-g <- ggplot(res,aes(date,steps))
-g + geom_bar(stat = "identity") + 
-    xlab("Date") + 
-    ylab("Total Steps")
+g <- ggplot(res,aes(steps))
+g <- ggplot(res,aes(steps))
+g + geom_histogram(binwidth = 800)
 ```
 
 ```{r}

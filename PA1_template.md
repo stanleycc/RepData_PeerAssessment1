@@ -56,10 +56,8 @@ Make a barplot based on ggplot2.
 
 
 ```r
-g <- ggplot(res,aes(date,steps))
-g + geom_bar(stat = "identity") + 
-    xlab("Date") + 
-    ylab("Total Steps")
+g <- ggplot(res,aes(steps))
+g + geom_histogram(binwidth = 800)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)\
@@ -166,10 +164,9 @@ Make a histogram from new data table and cacluate the mean and median total numb
 
 ```r
 res <- dt2 %>% group_by(date) %>% summarise(steps = sum(steps))
-g <- ggplot(res,aes(date,steps))
-g + geom_bar(stat = "identity") + 
-    xlab("Date") + 
-    ylab("Total Steps")
+g <- ggplot(res,aes(steps))
+g <- ggplot(res,aes(steps))
+g + geom_histogram(binwidth = 800)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)\
